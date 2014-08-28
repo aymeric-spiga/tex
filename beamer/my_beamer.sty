@@ -1,0 +1,278 @@
+%%%
+%%% THEMES
+%%%
+\usetheme{Madrid}
+%\newcommand{\changetext}[1]{\textcolor{blue}{[#1]}}
+%%%\usetheme[secheader]{Madrid}
+%%\usetheme{Pittsburgh} %% elargir la zone utile pour correspondre a Madrid
+%%\usepackage{beamerthemesplit}
+%%\usetheme{default}\setbeamersize{text margin left=.5cm}\setbeamersize{text margin right=.5cm}\setbeamertemplate{headline}{}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[page number]{}\setbeamertemplate{itemize items}[circle]\setbeamercolor{titlelike}{fg=black}\setbeamercolor{item}{fg=black}\setbeamertemplate{frametitle}{\vspace{1cm}\begin{centering}{\Large \textbf{\textmd{\insertframetitle}}}\par\end{centering}}\renewcommand{\baselinestretch}{.9} %% keynote-like
+
+%%%
+%%% COULEURS UPMC
+%%%
+\definecolor{orangeUPMC}{RGB}{224,82,6}
+\definecolor{UPMC}{RGB}{145,120,91}
+\definecolor{redUPMC}{RGB}{181,56,79}
+\definecolor{greenUPMC}{RGB}{144,152,107}
+
+%%% JB
+%\usetheme{CambridgeUS}
+%\usecolortheme{dove} %seahorse
+%\useinnertheme{rectangles}
+
+
+%\usetheme{mytheme}
+
+%%% PREPARATION POUR DARK SLIDES or anything similar
+%%% ... only the first line if one wants to keep theme layout
+\newcommand{\allcolorsblack}{
+\setbeamercolor{normal text}{bg=black} 
+\setbeamercolor{frametitle}{bg=black}
+\setbeamercolor{author in head/foot}{bg=black,fg=black!85!white}
+\setbeamercolor{title in head/foot}{bg=black,fg=black!85!white}
+\setbeamercolor{institute in head/foot}{bg=black,fg=black!85!white}
+\setbeamercolor{date in head/foot}{bg=black,fg=black!85!white}
+}
+\newcommand{\allcolorswhite}{
+\setbeamercolor{normal text}{bg=white} 
+\setbeamercolor{frametitle}{bg=white}
+\setbeamercolor{author in head/foot}{bg=white,fg=black!35!white}
+\setbeamercolor{title in head/foot}{bg=white,fg=black!35!white}
+\setbeamercolor{institute in head/foot}{bg=white,fg=black!35!white}
+\setbeamercolor{date in head/foot}{bg=white,fg=black!35!white}
+}
+\allcolorswhite
+
+\setbeamercolor{titlelike}{bg=UPMC,fg=white}
+\setbeamercolor{frametitle}{fg=orangeUPMC,bg=white}
+\setbeamercolor{framesubtitle}{parent=frametitle}
+
+\setbeamercolor*{normal text}{fg=UPMC}
+\setbeamercolor*{alerted text}{fg=redUPMC}
+\setbeamercolor*{example text}{fg=greenUPMC}
+
+\setbeamercolor{item projected}{bg=orangeUPMC,fg=white}
+\setbeamercolor{section in toc}{fg=orangeUPMC}
+\setbeamercolor{subsection in toc}{fg=UPMC}
+
+%\setbeamerfont{block title}{size={}}
+\setbeamercolor*{block title}{bg=greenUPMC,fg=white}
+\setbeamercolor*{block body}{bg=greenUPMC!15!white,fg=black}
+\setbeamercolor*{block title alerted}{bg=redUPMC,fg=white}
+\setbeamercolor*{block body alerted}{bg=redUPMC!15!white,fg=black}
+\setbeamercolor*{block title example}{bg=UPMC,fg=white}
+\setbeamercolor*{block body example}{bg=UPMC!15!white,fg=black}
+
+\newcommand{\changetext}[1]{\textcolor{orangeUPMC}{[#1]}}
+
+\newcommand{\upmclmdlogo}{\includegraphics[height=0.09\paperheight]{/home/aymeric/Work/cours/upmc-logotype.png}\hskip 0.4cm\includegraphics[height=0.18\paperheight]{/home/aymeric/Images/Logo/logo_LMD-300-50.png}}
+
+\newcommand{\upmclmdlesialogo}{\includegraphics[height=0.09\paperheight]{/home/aymeric/Work/cours/upmc-logotype.png}\hskip 0.4cm\includegraphics[height=0.18\paperheight]{/home/aymeric/Images/Logo/logo_LMD-300-50.png}\hskip 0.4cm\includegraphics[height=0.15\paperheight]{/home/aymeric/Images/Logo/LogoLesiaV_190.jpg}}
+
+%\usefonttheme{structurebold}
+%\usefonttheme{structuresmallcapsserif}
+
+%%%% http://www.tex.ac.uk/CTAN/macros/latex/contrib/beamer/base/themes/color/beamercolorthemedefault.sty
+
+%%%
+%%% STYLE LATEX
+%%%
+\usepackage{my_latex}
+
+%%%
+%%% PACKAGES BEAMER
+%%%
+\usepackage{colortbl} %% pour pause dans les tableaux
+\usepackage{pgfpages} %% pour version pour auditeur
+\usepackage{animate}
+
+\usepackage{multimedia}
+\usepackage{pdfpages}
+
+
+%%%
+%%% OPTIONS
+%%%
+\setbeamertemplate{navigation symbols}{}
+    %\setbeamercolor{normal text}{fg=black,bg=white}
+    %\setbeamercolor{alerted text}{fg=red}
+    %\setbeamercolor{example text}{fg=green!50!black}
+    %\setbeamercolor{structure}{fg=beamer@blendedblue} d'où ce bleu par défaut
+    %\setbeamercolor{background canvas}{parent=normal text}
+	%\definecolor{fondtitre}{rgb}{0.20,0.43,0.09}  % vert fonce
+	%\definecolor{coultitre}{rgb}{0.41,0.05,0.05}  % marron
+	%\setbeamercolor{structure}{fg=coultitre, bg=fondtitre!40}
+        %\setbeamercolor{structure}{fg=orange!65!black}
+   %\setbeamertemplate{itemize item}[ball]
+   %\setbeamertemplate{itemize subitem}[triangle]
+   %\setbeamertemplate{itemize subsubitem}[circle]
+
+%\setbeamertemplate{blocks}[shadow=false]%[rounded][shadow=false]
+
+
+\setbeamertemplate{bibliography item}[article]
+%\setbeamertemplate{bibliography item}[article] % Alias for the default.
+%\setbeamertemplate{bibliography item}[book] % little book icon as the reference
+
+
+%%% pour une copie papier
+\mode<handout>{\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]}
+%\mode<handout>{\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm, landscape]}
+%\mode<handout>{\pgfpagesuselayout{8 on 1}[a4paper,border shrink=5mm]}
+\mode<handout>{\setbeamercolor{background canvas}{bg=black!10}}
+\mode<handout>{\setbeameroption{hide notes}}
+\mode<handout>{\setbeamertemplate{footline}{}}
+
+% pour de jolies handout
+%%http://www.guidodiepen.nl/2009/07/creating-latex-beamer-handouts-with-notes
+%\usepackage{handoutWithNotes}
+%\mode<handout>{\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]}
+
+%%% sections
+\AtBeginLecture   
+{
+  %\begin{frame}<beamer>
+  %  \frametitle{}
+  %  \begin{center}
+  %  \Large\insertlecture
+  %  \end{center}
+  %\end{frame}
+  \part{\insertlecture}
+%\frame{\frametitle{Plan}\tableofcontents}
+}
+%%%
+%  \begin{frame}<beamer>
+%    \frametitle{\large{\insertlecture}}
+%    \tableofcontents
+%  \end{frame}
+
+%%% gestion des notes
+%\setbeameroption{show notes}
+%\setbeameroption{show only notes}
+
+
+%%%% NOTE POUR SE SOUVENIR
+%%%% \framezoom<(button overlay specification)><(zoomed overlay specification)>[(options)](upper left x , upper left y)(zoom area width, zoom area depth)
+
+%%%
+%%% MACROS
+%%%
+
+%%
+%% raccourcis maison pratiques
+%%
+	%% IMAGEONLY[options]{width factor, height factor, picture}
+\newcommand{\imageonly}[4][clip]{\begin{center} \includegraphics[width=#2\columnwidth, height=#3\paperheight, #1]{#4} \end{center}}
+	%% IMAGELEG[options]{width factor, height factor, picture, legend}
+\newcommand{\imageleg}[5][clip]{\begin{figure} \includegraphics[width=#2\columnwidth, height=#3\paperheight, #1]{#4}\\ \tiny{\changetext{#5}} \end{figure}}
+	%% SOURCE[vspace]{reference}
+\newcommand{\source}[2][-0.2]{\vspace{#1 cm} \begin{flushright} \tiny{\changetext{#2}} \end{flushright}}
+	%% SOURCEC[vspace]{reference}
+\newcommand{\sourcec}[2][-0.2]{\vspace{#1 cm} \begin{center} \tiny{\changetext{#2}} \end{center}}
+	%%% SOURCEBIB[vspace]{reference bibtex}
+%\newcommand{\sourcebib}[2][-0.2]{\vspace{#1 cm} \begin{flushright} \tiny{\changetext{#2}} \end{flushright}}
+	%% SLIDE[options]{frame title}{content}
+\newcommand{\slide}[3][label=dumb]{\begin{frame}[#1] \frametitle{#2} #3 \end{frame}}
+	%% SLIDEBLACK[options]{frame title}{content}
+	%\mode<handout>{
+%\newcommand{\slideblack}[3][label=dumb]{\begin{frame}[#1] \frametitle{#2} #3 \end{frame}}%}
+	%\mode<beamer>{
+\newcommand{\slideblack}[3][label=dumb]{\allcolorsblack \begin{frame}[#1]  \frametitle{#2} #3 \end{frame} \allcolorswhite }
+	%}
+	%% SLIDESUB[options]{frame title}{frame subtitle}{content}
+\newcommand{\slidesub}[4][label=dumb]{\begin{frame}[#1] \frametitle{#2} \framesubtitle{#3} #4 \end{frame}}
+	%% SLIDEBLACKSUB[options]{frame title}{frame subtitle}{content}
+\newcommand{\slideblacksub}[4][label=dumb]{\allcolorsblack \begin{frame}[#1]  \frametitle{#2} \framesubtitle{#3} #4 \end{frame} \allcolorswhite }
+	%% SLIDETITLE
+\newcommand{\slidetitle}{\begin{frame} \titlepage \end{frame}}
+	%% DOUBLECOL{width left col}{content left col}{width right col}{content right col}
+\newcommand{\doublecol}[4]{\vskip -0.2cm \begin{columns} \begin{column}{#1\textwidth} #2 \end{column}	\begin{column}{#3\textwidth} #4 \end{column} \end{columns} }
+	%% TRIPLECOL{width lcol}{content lcol}{width c}{content c}{width rcol}{content rcol}
+\newcommand{\triplecol}[6]{\vskip -0.2cm \begin{columns} \begin{column}{#1\textwidth} #2 \end{column}	\begin{column}{#3\textwidth} #4 \end{column} \begin{column}{#5\textwidth} #6 \end{column} \end{columns} }
+	%% QUADRICOL
+\newcommand{\quadricol}[8]{\vskip -0.2cm \begin{columns} \begin{column}{#1\textwidth} #2 \end{column}	\begin{column}{#3\textwidth} #4 \end{column} \begin{column}{#5\textwidth} #6 \end{column} \begin{column}{#7\textwidth} #8 \end{column} \end{columns} }
+	%% BLOC
+\newcommand{\bloc}[2]{\begin{block}{#1} #2 \end{block}}
+	%% ABLOC
+\newcommand{\abloc}[2]{\begin{alertblock}{#1} #2 \end{alertblock}}
+	%% EBLOC
+\newcommand{\ebloc}[2]{\begin{exampleblock}{#1} #2 \end{exampleblock}}
+	%% OLAY{width zone}{height zone}{content}
+\newcommand{\olay}[3]{\begin{overlayarea}{#1\columnwidth}{#2\textheight} #3 \end{overlayarea}}
+	%% DOUBLEIMAGE{width factor, height factor, title_left, picture_left, title_right, picture_right}
+\newcommand{\doubleimage}[6]{\doublecol{0.5}{\centers{#3}}{0.5}{\centers{#5}} \vskip -0.15cm \doublecol{0.5}{\image{#1}{#2}{#4}}{0.5}{\image{#1}{#2}{#6}}}
+        %% TRIPLEIMAGE{width factor, height factor, title_left, picture_left, title_middle, picture_middle, title_right, picture_right}
+\newcommand{\tripleimage}[8]{\triplecol{0.33}{\centers{#3}}{0.33}{\centers{#5}}{0.33}{\centers{#7}}\triplecol{0.33}{\image{#1}{#2}{#4}}{0.33}{\image{#1}{#2}{#6}}{0.33}{\image{#1}{#2}{#8}}}
+	%% DOUBLEIMAGELEG{width factor, height factor, caption_left, picture_left, caption_right, picture_right}
+\newcommand{\doubleimageleg}[6]{\doublecol{0.5}{\imageleg{#1}{#2}{#4}{#3}}{0.5}{\imageleg{#1}{#2}{#6}{#5}}}
+	%% TRIPLEIMAGELEG
+\newcommand{\tripleimageleg}[8]{\triplecol{0.33}{\imageleg{#1}{#2}{#4}{#3}}{0.33}{\imageleg{#1}{#2}{#6}{#5}}{0.33}{\imageleg{#1}{#2}{#8}{#7}}}
+	%% BIGSLIDE
+\newcommand{\bigslide}[1]{\begin{frame}<beamer> \frametitle{} \begin{center} \Large #1 \end{center} \end{frame}}
+	%% AGAINFRAMEBLACK
+\newcommand{\againframeblack}[1]{ \allcolorsblack \againframe{#1} \allcolorswhite }
+	%% FILMC{titre,lien}  
+\newcommand{\filmc}[2]{ \begin{center} \movie[externalviewer]{\underline{#1}}{#2} \end{center} }  %% et pas: { #2 }
+        %%\href{run:./movie_2.mpg}{[Movie]} 
+
+	%% MARVIN{title}{sentence}
+\newcommand{\marvin}[2]{ \slide{#1}{ \doublecol{0.25}{\image{0.99}{0.6}{decouverte/humour/MarvinMartian.png}}{0.65}{ \abloc{}{#2} } } }
+	%% CITER
+\newcommand{\citer}[1]{\textcolor{blue}{\emph{\footnotesize{#1}}}}
+
+    %% JB: EMPTY SLIDE
+\newcommand{\slideimage}[3][label=dumb]{%
+{\usebackgroundtemplate{%
+\includegraphics[width=\paperwidth]{#2}}
+\begin{frame}[#1] #3 \end{frame}}}
+%Ensuite, la commande ci-dessous permet par exemple de mettre une belle image en plein écran en fond (s'assurer que l'image a un format 4/3):
+%\slideimage[label=sld-gcm-storm]{fig-gcm-sky.jpg}{%
+%\nawak{0.27}{0.06}{\centers{\textcolor{white}{\small \bf The martian
+%sky as seen by the rover Opportunity (\ls~=~120\degree)}}}{0.4}
+%} 
+
+
+%%%%% POUR POUVOIR COPIER COLLER FACILEMENT
+%%%%% DU COURS A LA TALK
+	%% TWICEIMAGE : comme IMAGE mais taille deux fois plus grande
+	\usepackage{calc}
+	\newcommand{\twiceimage}[3]{
+		\setlength{\columnwidth}{\columnwidth + \columnwidth}
+		\setlength{\paperheight}{\paperheight + \paperheight}
+                \begin{figure} \includegraphics[width=#1\columnwidth, height=#2\paperheight]{#3} \end{figure}
+	}
+        %% ETIRE : multiplie juste la hauteur par deux
+	\newcommand{\etire}[3]{
+                \setlength{\columnwidth}{0.9\columnwidth}
+		\setlength{\paperheight}{\paperheight + 0.75\paperheight}
+                \begin{figure} \includegraphics[width=#1\columnwidth, height=#2\paperheight]{#3} \end{figure}
+	}
+        %% ETIRETWICE
+	\newcommand{\etiretwice}[3]{
+                \setlength{\columnwidth}{\columnwidth + \columnwidth}
+		\setlength{\paperheight}{\paperheight + 2.5\paperheight}
+                \begin{figure} \includegraphics[width=#1\columnwidth, height=#2\paperheight]{#3} \end{figure}
+	}
+	%% REDEFINE FIGSUP coming from mylatex.sty
+	\renewcommand{\figsup}[6]{\doublecol{0.5}{\twiceimage{#1}{#2}{#3}}{0.5}{\twiceimage{#1}{#2}{#4}}\note{\scriptsize#5}\label{#6}}
+        \renewcommand{\figun}[5]{\etire{#1}{#2}{#3}\note{\scriptsize#4}\label{#5}}
+        \renewcommand{\figside}[5]{\etire{#1}{#2}{#3}\note{\scriptsize#4}\label{#5}}
+        \newcommand{\figbig}[5]{\etiretwice{#1}{#2}{#3}\note{\scriptsize#4}\label{#5}} %%utile pour certaines figside
+	%% SI FIGUN EST UN PEU PETIT UTILISER FIGBIG ou MODIFIER LES COEFF
+
+
+%%%
+%%% METTRE DU TEXTE N'IMPORTE OU
+%%%
+\usepackage[absolute,showboxes,overlay]{textpos}     % déclaration du package
+\textblockorigin{0pt}{0pt}                           % origine des positions
+\TPshowboxestrue                                     % affiche le contour des textblock
+\TPshowboxesfalse                                    % n'affiche pas le contour des textblock
+%% NAWAK {pos x}{pos y}{text}{largeur}
+\newcommand{\nawak}[4]{\begin{textblock*}{#4\textwidth}(#1\textwidth,#2\paperheight) #3 \end{textblock*}}
+
+
+        %% BORROW{file}{page [or] page1-pagen}
+\newcommand{\wheretoborrow}{/home/aymeric/Work/TALKS_REFERENCES}
+\newcommand{\borrow}[3]{{\setbeamercolor{background canvas}{bg=}\nawak{0.02}{0.97}{\tiny{#3}}{1}\includepdf[pages=#2,offset=0mm 0mm,width=0.93\paperwidth,height=0.93\paperheight]{\wheretoborrow/#1}}}
