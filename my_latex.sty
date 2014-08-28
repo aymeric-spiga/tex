@@ -1,0 +1,282 @@
+%\documentclass[a4paper,fontsize=12pt,DIV16]{scrartcl}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{my_latex}
+%\usepackage{patch_english}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{scrpage2}
+%\deftripstyle{Vide}[0pt][.4pt]{}{}{}{}{}{}
+%\deftripstyle{Bandeau}[0pt][.4pt]{EXM-SC-LMD-0969}{}{\pagemark}{Phase B2X2 \~ Task 1}{}{\textsc{A. Spiga}} \pagestyle{scrheadings} \pagestyle{Vide}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{document}
+%\pagenumbering{arabic}
+%\pagestyle{Bandeau}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{hyperref}
+
+%%%
+%%% PACKAGES LaTeX
+%%%
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{times}
+\usepackage{lmodern}  	%% autre police, vectorielle (utiliser pdflatex)
+%\usepackage{fourier}
+\usepackage{graphics}
+\usepackage{graphicx}
+		%%% trim: left bottom right top  ;; pour monter en enlever moins en dessous et plus au dessus (ou alors utiliser viewport)
+		%%% clip: pour ne pas faire apparaître les bouts de plot hors zone
+\usepackage{amsmath}	% Les symboles les plus fréquents.
+\usepackage{amssymb}	% Des symboles.
+\usepackage{amsfonts}	% Des fontes, eg pour \mathbb.
+\usepackage{wasysym}
+
+	%%% pour figures
+	\usepackage{color}	
+	\usepackage{array}
+	\usepackage{pstricks}
+	\usepackage{epsf}
+
+\usepackage{longtable} %% pour les captions sans référence
+\usepackage{multicol} %% pour faire du multi-colonne
+%\usepackage{srcltx}
+%\usepackage{natbib}  %% pour les citations souples !!! PB AVEC BEAMER !!!
+
+%\usepackage{wrapfig}
+
+%\setcounter{MaxMatrixCols}{30}
+
+%%%
+%%% OPTIONS
+%%%
+\usepackage{url}			% Needed for wrapping long URLs
+%\usepackage{makeidx}			% Standard LaTeX package for creating indexes
+%\setcounter{MaxMatrixCols}{10}		% By default, LaTeX only allows 10 columns or less in matrices
+\usepackage{paralist}                   % More possibilities for lists
+
+
+%%%% PB WITH BEAMER
+%%\usepackage{enumitem} 			% for continuing enumerate
+
+
+%\usepackage{ulem} %% barrer du texte %% MODIFIE EMPH!
+
+%%%
+%%% PATHS
+%%%
+\graphicspath{{/home/aymeric/Work/}}
+\newcommand{\figfrancis}{/home/aymeric/Work/decouverte/cours_meteo/Codron}
+\newcommand{\figwallace}{/home/aymeric/Work/decouverte/cours_meteo/Wallace}
+\newcommand{\figpayan}{/home/aymeric/Work/decouverte/cours_meteo/Payan}
+
+%%%
+%%% IF NEEDED
+%%%
+%\usepackage{pstricks}
+%%\usepackage{psf}
+%%\usepackage{psfig}
+
+%% FINGER
+\usepackage{pifont}
+\newenvironment{finger}%
+{ \begin{dinglist}%
+	{43}%
+	{
+	}}%
+{ \end{dinglist} }
+
+%% CITEMIZE
+\newenvironment{citemize}%
+{ \begin{list}%
+	{$\circ$}%\bullet\star
+ 	{%\setlength{\labelwidth}{30pt}%
+	 %\setlength{\leftmargin}{35pt}%
+         %\setlength{\topsep}{2pt}%
+	 \setlength{\itemsep}{-0.2\baselineskip}}}%
+{ \end{list} }
+
+%% VOCABULAIRE
+\newcommand{\voc}[1]{\textcolor{blue}{\emph{#1}}}
+
+%% DONC
+%\newcommand{\donc}{$\rightarrow$}
+\newcommand{\donc}{$\Rightarrow$}
+
+%% CENTER
+\newcommand{\centers}[1]{\begin{center} #1 \end{center}}
+
+%%overrightarrow normalement pour les vecteurs
+
+
+%%%% EMAIL
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+
+
+%% NEWBLOCK
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
+%% IMAGE[options]{width factor, height factor, picture}
+\newcommand{\image}[4][clip]{\begin{figure} \includegraphics[width=#2\columnwidth, height=#3\paperheight, #1]{#4} \end{figure}}
+
+%% FIGUN[options]{width factor, height factor, picture, caption, label}
+%%%%%%% FIG POSE PROBLEME SOUS BEAMER
+\newcommand{\figun}[6][clip]{\begin{figure} \begin{center} \includegraphics[width=#2\columnwidth, height=#3\textheight, #1]{#4} \setcapwidth[c]{#2\textwidth} \caption{\emph{#5}} \label{#6} \end{center} \end{figure}}
+
+%% FIGSUP[options]{width factor, height factor, picture1, picture2, caption, label}
+\newcommand{\figsup}[7][clip]{\begin{figure} \begin{center} \includegraphics[width=#2\columnwidth, height=#3\paperheight, #1]{#4} \includegraphics[width=#2\columnwidth, height=#3\paperheight, #1]{#5} \caption{\emph{#6}} \label{#7} \end{center} \end{figure}}
+
+%%% FIGSIDE[options]{width factor, height factor, picture, caption, label}
+%\newcommand{\figside}[6][clip]{\begin{figure} \begin{center} \begin{captionbeside}{\emph{#5}} \includegraphics[width=#2\textwidth, height=#3\textheight, #1]{#4} \end{captionbeside} \label{#6} \end{center} \end{figure}}
+
+%%%%% note: ne fonctionne qu'avec komascript
+%\setcapindent{1em} %%% parce que sinon l'indentation "Figure ... -- texte" est trop grande
+\newcommand{\figside}[6][clip]{
+\begin{figure}
+\begin{captionbeside}{\emph{#5}\label{#6}}
+\includegraphics[width=#2\columnwidth, height=#3\paperheight, #1]{#4}
+\end{captionbeside}
+\end{figure}
+}
+
+
+%%%% trucs Francis
+\renewcommand{\deg}{\ensuremath{^{\circ}}}
+\newcommand{\mo}{\ensuremath{^{-1}}}
+\newcommand{\md}{\ensuremath{^{-2}}}
+\newcommand{\mt}{\ensuremath{^{-3}}}
+\newcommand{\ca}{\ensuremath{^{2}}}
+\newcommand{\cu}{\ensuremath{^{3}}}
+%%%
+%\renewcommand{\v}[1]{\ensuremath{\vec #1}}
+\renewcommand{\v}[1]{\ensuremath{\mathbf{#1}}}
+\renewcommand{\b}[1]{\ensuremath{\bar{#1}}}
+%\newcommand{\vl}[1]{\ensuremath{\overrightarrow{#1}}}
+\newcommand{\vl}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\bl}[1]{\ensuremath{\overline{#1}}}
+\newcommand{\ts}[1]{\ensuremath{\left[#1\right]}}
+\renewcommand{\deg}{\ensuremath{^{\circ}}}
+\newcommand{\uz}{\ensuremath{_{\circ}}}
+\newcommand{\grad}{\overrightarrow{\operatorname{grad}}\,}
+\newcommand{\rot}{\overrightarrow{\operatorname{rot}}\,}
+\DeclareMathOperator{\dvg}{div}
+
+
+%%%
+%%% COMMANDES H&K
+%%%
+%\newcommand{\degre}{\ensuremath{{}^{\text{\footnotesize\ensuremath{\circ}}}}}
+\newcommand{\e}[1]{\ensuremath{{}_{\text{#1}}}} %%indice haut bas: \e d'abord ^ ensuite
+\newcommand{\U}[1]{\ensuremath{\mathrm{~#1}}}  %%bof
+\newcommand{\sk}{\smallskip}
+\newcommand{\bk}{\bigskip}
+\newcommand{\mk}{\medskip}
+
+%%% fractions
+	\newcommand{\f}[2]{{\ensuremath{%
+		\mathchoice%
+		{\dfrac{#1}{#2}}
+		{\dfrac{#1}{#2}}
+		{\frac{#1}{#2}}
+		{\frac{#1}{#2}}
+	}}} %% fractions dont la taille d'adapte
+
+%%% derivees
+	%\newcommand{\dd}{\ensuremath{\mathrm{d}}}
+	\newcommand{\dd}{\ensuremath{\text{d}}}
+	% df
+	% --	Exemple: $ \ddf{f}{x} $
+	% dx
+	\newcommand{\ddf}[2]{\ensuremath{\f{\dd#1}{\dd#2}}}
+	% df
+	% --	Exemple: $ \ddt{f} $		On dérive par rapport à t.
+	% dt
+	\newcommand{\ddt}[1]{\ddf{#1}{t}}
+	% ðf
+	% --	Exemple: $ \Dp{f}{x} $
+	% ðx
+	\newcommand{\Dp}[2]{\ensuremath{\f{\partial#1}{\partial#2}}} 
+	% ðf
+	% --	Exemple: $ \Dpt{f} $		On dérive par rappor à t.
+	% ðt
+	\newcommand{\Dpt}[1]{\ensuremath{\Dp{#1}{t}}}
+	% ð²f
+	% ---	Exemple: $ \DDp{f}{x} $
+	% ðx²
+	\newcommand{\DDp}[2]{\ensuremath{\f{\partial^2#1}{\partial{#2}^2}}}
+
+
+%%% parenthèses adaptatives
+	\newcommand{\pa}[2][9]{%
+		\ifthenelse{#1 = 0}
+			{\ensuremath{#2}}{}%
+		\ifthenelse{#1 = 1}
+			{\ensuremath{(#2)}}{}%
+		\ifthenelse{#1 = 2}
+			{\ensuremath{\big(#2\big)}}{}%
+		\ifthenelse{#1 = 3}
+			{\ensuremath{\Big(#2\Big)}}{}%
+		\ifthenelse{#1 = 4}
+			{\ensuremath{\bigg(#2\bigg)}}{}%
+		\ifthenelse{#1 = 5}
+			{\ensuremath{\Bigg(#2\Bigg)}}{}%
+		\ifthenelse{#1 = 9}
+			{\ensuremath{\left(#2\right)}}{}%
+	}
+	% On peut aussi vouloir des crochets de la bonne taille plutôt que des 
+	% parenthèses (analogue de \pa: mêmes recommandations).
+	% Exemple: $\crochets{ \f{1}{2} x \ln x }$
+	\newcommand{\crochets}[2][9]{%
+		\ifthenelse{#1 = 0}
+			{\ensuremath{#2}}{}%
+		\ifthenelse{#1 = 1}
+			{\ensuremath{[#2]}}{}%
+		\ifthenelse{#1 = 2}
+			{\ensuremath{\big[#2\big]}}{}%
+		\ifthenelse{#1 = 3}
+			{\ensuremath{\Big[#2\Big]}}{}%
+		\ifthenelse{#1 = 4}
+			{\ensuremath{\bigg[#2\bigg]}}{}%
+		\ifthenelse{#1 = 5}
+			{\ensuremath{\Bigg[#2\Bigg]}}{}%
+		\ifthenelse{#1 = 9}
+			{\ensuremath{\left[#2\right]}}{}%
+	}
+	\newcommand{\pac}[2][9]{\ensuremath{\crochets[#1]{#2}}}		% Synonyme
+
+%%% moyenne
+\newcommand{\moyenne}[2][9]{%
+	\ifthenelse{#1 = 0}
+		{\ensuremath{#2}}{}%
+	\ifthenelse{#1 = 1}
+		{\ensuremath{\langle#2\rangle}}{}%
+	\ifthenelse{#1 = 2}
+		{\ensuremath{\big\langle#2\big\rangle}}{}%
+	\ifthenelse{#1 = 3}
+		{\ensuremath{\Big\langle#2\Big\rangle}}{}%
+	\ifthenelse{#1 = 4}
+		{\ensuremath{\bigg\langle#2\bigg\rangle}}{}%
+	\ifthenelse{#1 = 5}
+		{\ensuremath{\Bigg\langle#2\Bigg\rangle}}{}%
+	\ifthenelse{#1 = 9}
+		{\ensuremath{\left\langle#2\right\rangle}}{}%
+}
+
+%%%
+%%% PETITS RACCOURCIS DEBILES
+%%%
+\newcommand{\IR}{infra-rouge}
+\newcommand{\mi}{\U{\mu m}}
+\newcommand{\carb}{CO$_2$}
+\newcommand{\eau}{H$_2$O}
+\newcommand{\lat}{l'atmosphère}
+%
+\newcommand{\Ma}{Mars}
+\newcommand{\mn}{martien}
+\newcommand{\mne}{martienne}
+\newcommand{\lM}{la planète \Ma}
+\newcommand{\LM}{La planète \Ma}
+\newcommand{\lR}{la planète rouge}
+\newcommand{\LR}{La planète rouge}
+%

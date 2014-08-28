@@ -1,0 +1,31 @@
+\usepackage[french,english]{babel}
+%%\usepackage[french]{babel}
+%\addto\captionsfrench{ \renewcommand{\contentsname} {Sommaire} }
+\addto\captionsenglish{ \renewcommand{\contentsname} {Sommaire} }
+
+% À la main, on dessine toujours des intégrales ayant la même taille.
+% Dans l'édition française, c'est assez standard; ce sont les anglo-saxons
+% qui adaptent la taille de leurs intégrales au contexte (leurs intégrales
+% sont plus petites dans le texte). Pour avoir toujours une intégrale de 
+% taille standard, on dispose de la commande \Int, qui prend deux arguments:
+% ses bornes.
+%
+% Exemple: $ \Int{0}{\f \pi 2} \sin t \dt $
+%
+% Exemple: $ \Int{}{} \ln t \dt $
+%
+% -- cf. Annales
+
+\newcommand{\Int}[2]{\ensuremath{\mathchoice%
+	{{\displaystyle\int_{#1}^{#2}}}
+	{{\displaystyle\int_{#1}^{#2}}}
+	{\int_{#1}^{#2}}
+	{\int_{#1}^{#2}}
+	}}
+\newcommand{\ofg}[1]{\og{}#1\fg{}}
+
+
+
+
+
+
