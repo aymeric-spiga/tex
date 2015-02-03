@@ -120,6 +120,10 @@
 %% IMAGE[options]{width factor, height factor, picture}
 \newcommand{\image}[4][clip]{\begin{figure} \includegraphics[width=#2\columnwidth, height=#3\paperheight, #1]{#4} \end{figure}}
 
+%% IMAGEC[options]{width factor, height factor, picture}
+\newcommand{\imagec}[4][clip]{\begin{figure} \begin{center} \includegraphics[width=#2\columnwidth, height=#3\paperheight, #1]{#4} \end{center} \end{figure}}
+
+
 %% FIGUN[options]{width factor, height factor, picture, caption, label}
 %%%%%%% FIG POSE PROBLEME SOUS BEAMER
 \newcommand{\figun}[6][clip]{\begin{figure} \begin{center} \includegraphics[width=#2\columnwidth, height=#3\textheight, #1]{#4} \setcapwidth[c]{#2\textwidth} \caption{\emph{#5}} \label{#6} \end{center} \end{figure}}
@@ -133,7 +137,7 @@
 %%%%% note: ne fonctionne qu'avec komascript
 %\setcapindent{1em} %%% parce que sinon l'indentation "Figure ... -- texte" est trop grande
 \newcommand{\figside}[6][clip]{
-\begin{figure}
+\begin{figure}[h!]
 \begin{captionbeside}{\emph{#5}\label{#6}}
 \includegraphics[width=#2\columnwidth, height=#3\paperheight, #1]{#4}
 \end{captionbeside}
