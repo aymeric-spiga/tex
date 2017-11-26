@@ -56,10 +56,14 @@
 %\setcounter{MaxMatrixCols}{10}		% By default, LaTeX only allows 10 columns or less in matrices
 \usepackage{paralist}                   % More possibilities for lists
 
+\usepackage{pdfpages}
+\usepackage{animate}
+
+
 
 %%%% PB WITH BEAMER
 %%\usepackage{enumitem} 			% for continuing enumerate
-
+\usepackage{enumitem}
 
 %\usepackage{ulem} %% barrer du texte %% MODIFIE EMPH!
 
@@ -77,6 +81,9 @@
 %\usepackage{pstricks}
 %%\usepackage{psf}
 %%\usepackage{psfig}
+
+
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 
 %% FINGER
 \usepackage{pifont}
@@ -97,8 +104,23 @@
 	 \setlength{\itemsep}{-0.2\baselineskip}}}%
 { \end{list} }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% VERSIONS %%%%
+\usepackage{version}
+\newcommand{\mainversion}{\includeversion{b1}\excludeversion{b2}}
+\newcommand{\altversion}{\excludeversion{b1}\includeversion{b2}}
+\newcommand{\one}[1]{\begin{b1}#1\end{b1}}
+\newcommand{\two}[1]{\begin{b2}#1\end{b2}}
+\newcommand{\oneandtwo}[2]{\begin{b1}#1\end{b1}\begin{b2}#2\end{b2}}
+%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %% VOCABULAIRE
 \newcommand{\voc}[1]{\textcolor{blue}{\emph{#1}}}
+
+%% INSIST
+\newcommand{\insist}[1]{\textit{\textbf{#1}}}
 
 %% DONC
 %\newcommand{\donc}{$\rightarrow$}
@@ -125,8 +147,14 @@
 
 
 %% FIGUN[options]{width factor, height factor, picture, caption, label}
+%%%%%%% take IMAGE from beamer, replace by FIGUN, add two arguments (captions and labels)
 %%%%%%% FIG POSE PROBLEME SOUS BEAMER
 \newcommand{\figun}[6][clip]{\begin{figure} \begin{center} \includegraphics[width=#2\columnwidth, height=#3\textheight, #1]{#4} \setcapwidth[c]{#2\textwidth} \caption{\emph{#5}} \label{#6} \end{center} \end{figure}}
+
+%% marche pas: les deux figures sont décalées.
+%%% FIGDEUX[options]{width factor, height factor, title_left, picture_left, title_right, picture_right, caption, label}
+%%%%%%%% take DOUBLEIMAGE from beamer, replace by FIGDEUX, add two arguments (captions and labels)
+%\newcommand{\figdeux}[9][clip]{\begin{figure} \begin{center} \includegraphics[width=#2\columnwidth, height=#3\paperheight, #1]{#5} \includegraphics[width=#2\columnwidth, height=#3\textheight, #1]{#7} \caption{\emph{#8. (Left) #4. (Right) #6.}} \label{#9} \end{center} \end{figure}}
 
 %% FIGSUP[options]{width factor, height factor, picture1, picture2, caption, label}
 \newcommand{\figsup}[7][clip]{\begin{figure} \begin{center} \includegraphics[width=#2\columnwidth, height=#3\paperheight, #1]{#4} \includegraphics[width=#2\columnwidth, height=#3\paperheight, #1]{#5} \caption{\emph{#6}} \label{#7} \end{center} \end{figure}}
@@ -176,6 +204,17 @@
 \newcommand{\sk}{\smallskip}
 \newcommand{\bk}{\bigskip}
 \newcommand{\mk}{\medskip}
+
+% Les constantes.
+\newcommand{\cte}{\ensuremath{C^{\mbox{\scriptsize{te}}}}}
+\newcommand{\Cte}{\cte}						% Synonyme
+
+%% exponentielle et complexes
+\newcommand{\ir}{\ensuremath{\mathrm{i}}\xspace}	% « i romain »
+\newcommand{\jr}{\ensuremath{\mathrm{j}}\xspace}	% « j romain »
+\newcommand{\ex}[1]{\ensuremath{\mathrm{e}^{\,#1}}\xspace}
+\newcommand{\exi}[1]{\ensuremath{\mathrm{e}^{\,\mathrm{i}\,#1}}\xspace}
+\newcommand{\exmi}[1]{\ensuremath{\mathrm{e}^{\,-\mathrm{i}\,#1}}\xspace}
 
 %%% fractions
 	\newcommand{\f}[2]{{\ensuremath{%
@@ -284,3 +323,13 @@
 \newcommand{\lR}{la planète rouge}
 \newcommand{\LR}{La planète rouge}
 %
+
+
+
+
+%%% from macro_fred
+\def\dix#1{$10^{#1}$}
+\def\derd#1#2{\frac{d#1}{d#2}}
+\newcommand{\der}[2]{\frac{\partial #1 }{\partial #2} }
+\def\div{\mbox{div}}
+\newcommand{\dep}[1]{\left( #1 \right) }
