@@ -68,6 +68,8 @@
 
 \newcommand{\upmclmdlogo}{\includegraphics[height=0.09\paperheight]{/home/aymeric/Work/cours/upmc-logotype.png}\hskip 0.4cm\includegraphics[height=0.18\paperheight]{/home/aymeric/Images/Logo/logo_LMD-300-50.png}}
 
+\newcommand{\ipsllmdlogo}{\includegraphics[height=0.18\paperheight]{/home/aymeric/Images/Logo/logo_LMD-300-50.png}\hskip 0.4cm\includegraphics[height=0.18\paperheight]{/home/aymeric/Images/Logo/logoipsl247x144.png}}
+
 \newcommand{\upmclmdlesialogo}{\includegraphics[height=0.09\paperheight]{/home/aymeric/Work/cours/upmc-logotype.png}\hskip 0.4cm\includegraphics[height=0.18\paperheight]{/home/aymeric/Images/Logo/logo_LMD-300-50.png}\hskip 0.4cm\includegraphics[height=0.15\paperheight]{/home/aymeric/Images/Logo/LogoLesiaV_190.jpg}}
 
 %\usefonttheme{structurebold}
@@ -91,10 +93,8 @@
 %%%
 \usepackage{colortbl} %% pour pause dans les tableaux
 \usepackage{pgfpages} %% pour version pour auditeur
-\usepackage{animate}
 
 \usepackage{multimedia}
-\usepackage{pdfpages}
 
 
 %%%
@@ -227,6 +227,19 @@
 	%% CITER
 \newcommand{\citer}[1]{\textcolor{blue}{\emph{\footnotesize{#1}}}}
 
+	%% BIBLIO example: \biblio{les papiers cités}{\nocite{Garc:16}\nocite{Murd:16}}
+\newcommand{\biblio}[2]{% 
+\slide{#1}{\scriptsize #2 \bibliographystyle{apalike}\bibliography{/home/aymeric/Work/submitted/newfred}}
+}
+
+	%% TOPLOGO example: \toplogo{0.1}{/home/aymeric/Images/Logo/insight-mission-logo.jpg}
+\newcommand{\toplogo}[2]{%
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{#1\paperheight}(.99\textwidth,0.05cm)
+\includegraphics[height=#1\paperheight]{#2}
+\end{textblock*}}
+}
+
     %% JB: EMPTY SLIDE
 \newcommand{\slideimage}[3][label=dumb]{%
 {\usebackgroundtemplate{%
@@ -282,3 +295,6 @@
         %% BORROW{file}{page [or] page1-pagen}
 \newcommand{\wheretoborrow}{/home/aymeric/Work/TALKS_REFERENCES}
 \newcommand{\borrow}[3]{{\setbeamercolor{background canvas}{bg=}\nawak{0.02}{0.97}{\tiny{#3}}{1}\includepdf[pages=#2,offset=0mm 0mm,width=0.93\paperwidth,height=0.93\paperheight]{\wheretoborrow/#1}}}
+
+        %% BORROWABS{abslink}{page [or] page1-pagen}
+\newcommand{\borrowabs}[3]{{\setbeamercolor{background canvas}{bg=}\nawak{0.02}{0.97}{\tiny{#3}}{1}\includepdf[pages=#2,offset=0mm 0mm,width=0.93\paperwidth,height=0.93\paperheight]{#1}}}
