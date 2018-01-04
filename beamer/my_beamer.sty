@@ -7,6 +7,7 @@
 %%\usetheme{Pittsburgh} %% elargir la zone utile pour correspondre a Madrid
 %%\usepackage{beamerthemesplit}
 %%\usetheme{default}\setbeamersize{text margin left=.5cm}\setbeamersize{text margin right=.5cm}\setbeamertemplate{headline}{}\setbeamertemplate{navigation symbols}{}\setbeamertemplate{footline}[page number]{}\setbeamertemplate{itemize items}[circle]\setbeamercolor{titlelike}{fg=black}\setbeamercolor{item}{fg=black}\setbeamertemplate{frametitle}{\vspace{1cm}\begin{centering}{\Large \textbf{\textmd{\insertframetitle}}}\par\end{centering}}\renewcommand{\baselinestretch}{.9} %% keynote-like
+%\usetheme{CambridgeUS}\usecolortheme{dove}\useinnertheme{rectangles} %% JB
 
 %%%
 %%% COULEURS UPMC
@@ -63,14 +64,18 @@
 \setbeamercolor*{block body alerted}{bg=redUPMC!15!white,fg=black}
 \setbeamercolor*{block title example}{bg=UPMC,fg=white}
 \setbeamercolor*{block body example}{bg=UPMC!15!white,fg=black}
+\newcommand{\upmclmdlogo}{\includegraphics[height=0.09\paperheight]{/home/aspiga/images/logo/upmc-logotype.png}\hskip 0.4cm\includegraphics[height=0.18\paperheight]{/home/aspiga/images/logo/logo_LMD-300-50.png}}
 
 \newcommand{\changetext}[1]{\textcolor{orangeUPMC}{[#1]}}
+\newcommand{\ipsllmdlogo}{\includegraphics[height=0.18\paperheight]{/home/aspiga/images/logo/logo_LMD-300-50.png}\hskip 0.4cm\includegraphics[height=0.18\paperheight]{/home/aspiga/images/logo/logoipsl247x144.png}}
 
-\newcommand{\upmclmdlogo}{\includegraphics[height=0.09\paperheight]{/home/aymeric/Work/cours/upmc-logotype.png}\hskip 0.4cm\includegraphics[height=0.18\paperheight]{/home/aymeric/Images/Logo/logo_LMD-300-50.png}}
+\newcommand{\upmclmdlesialogo}{\includegraphics[height=0.09\paperheight]{/home/aspiga/images/logo/upmc-logotype.png}\hskip 0.4cm\includegraphics[height=0.18\paperheight]{/home/aspiga/images/logo/logo_LMD-300-50.png}\hskip 0.4cm\includegraphics[height=0.15\paperheight]{/home/aspiga/images/logo/LogoLesiaV_190.jpg}}
 
-\newcommand{\ipsllmdlogo}{\includegraphics[height=0.18\paperheight]{/home/aymeric/Images/Logo/logo_LMD-300-50.png}\hskip 0.4cm\includegraphics[height=0.18\paperheight]{/home/aymeric/Images/Logo/logoipsl247x144.png}}
+\newcommand{\insighttoplogo}{\toplogo{0.1}{/home/aspiga/images/logo/insight-mission-logo.jpg}}
+\newcommand{\sutoplogo}{\toplogo{0.038}{/home/aspiga/images/logo/LOGO_SCIENCES_DEF_CMJN.jpg}}
 
-\newcommand{\upmclmdlesialogo}{\includegraphics[height=0.09\paperheight]{/home/aymeric/Work/cours/upmc-logotype.png}\hskip 0.4cm\includegraphics[height=0.18\paperheight]{/home/aymeric/Images/Logo/logo_LMD-300-50.png}\hskip 0.4cm\includegraphics[height=0.15\paperheight]{/home/aymeric/Images/Logo/LogoLesiaV_190.jpg}}
+\newcommand{\sulmdlogo}{\includegraphics[height=0.15\paperheight]{/home/aspiga/images/logo/LOGO_SCIENCES_DEF_CMJN.jpg}\hskip 0.4cm\includegraphics[height=0.18\paperheight]{/home/aspiga/images/logo/logo_LMD-300-50.png}}
+%\newcommand{\upmclmdlogo}{\sulmdlogo}
 
 %\usefonttheme{structurebold}
 %\usefonttheme{structuresmallcapsserif}
@@ -293,7 +298,7 @@
 
 
         %% BORROW{file}{page [or] page1-pagen}
-\newcommand{\wheretoborrow}{/home/aymeric/Work/TALKS_REFERENCES}
+\newcommand{\wheretoborrow}{TALKS_REFERENCES}
 \newcommand{\borrow}[3]{{\setbeamercolor{background canvas}{bg=}\nawak{0.02}{0.97}{\tiny{#3}}{1}\includepdf[pages=#2,offset=0mm 0mm,width=0.93\paperwidth,height=0.93\paperheight]{\wheretoborrow/#1}}}
 
         %% BORROWABS{abslink}{page [or] page1-pagen}
