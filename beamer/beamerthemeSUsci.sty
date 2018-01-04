@@ -1,0 +1,64 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% A modification of the Madrid Beamer theme
+%% to use the colors of Sorbonne Université (Sciences)
+%%
+%%  \usetheme{SUsci}
+%%
+%% A. Spiga 04/01/2018
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProvidesPackage{beamerthemeSU}
+\RequirePackage{beamerthemeMadrid}
+
+%%%
+%%% COULEURS SU
+%%%
+\definecolor{SUblue}{RGB}{29,39,105}
+\definecolor{SUgray}{RGB}{195,192,189}
+\definecolor{SUred}{RGB}{230,51,42}
+\definecolor{SUscience}{RGB}{82,181,229}
+
+
+
+%\usetheme{mytheme}
+
+%%% PREPARATION POUR DARK SLIDES or anything similar
+%%% ... only the first line if one wants to keep theme layout
+\newcommand{\allcolorsblack}{
+\setbeamercolor{normal text}{bg=black} 
+\setbeamercolor{frametitle}{fg=SUscience,bg=black}
+\setbeamercolor{author in head/foot}{bg=black,fg=black!85!white}
+\setbeamercolor{title in head/foot}{bg=black,fg=black!85!white}
+\setbeamercolor{institute in head/foot}{bg=black,fg=black!85!white}
+\setbeamercolor{date in head/foot}{bg=black,fg=black!85!white}
+}
+\newcommand{\allcolorswhite}{
+\setbeamercolor{normal text}{bg=white} 
+\setbeamercolor{frametitle}{fg=SUblue,bg=white}
+\setbeamercolor{author in head/foot}{bg=white,fg=black!35!white}
+\setbeamercolor{title in head/foot}{bg=white,fg=black!35!white}
+\setbeamercolor{institute in head/foot}{bg=white,fg=black!35!white}
+\setbeamercolor{date in head/foot}{bg=white,fg=black!35!white}
+}
+\allcolorswhite
+
+\setbeamercolor{titlelike}{bg=SUblue,fg=white}
+\setbeamercolor{frametitle}{fg=SUblue,bg=white}
+\setbeamercolor{framesubtitle}{parent=frametitle}
+
+\setbeamercolor*{normal text}{fg=SUscience!50!SUblue}
+\setbeamercolor*{alerted text}{fg=SUred}
+\setbeamercolor*{example text}{fg=SUgray}
+
+\setbeamercolor{item projected}{bg=SUred,fg=white}
+\setbeamercolor{section in toc}{fg=SUblue}
+\setbeamercolor{subsection in toc}{fg=SUgray}
+
+%\setbeamerfont{block title}{size={}}
+\setbeamercolor*{block title}{bg=SUgray,fg=white}
+\setbeamercolor*{block body}{bg=SUgray!50!white,fg=black}
+\setbeamercolor*{block title alerted}{bg=SUred,fg=white}
+\setbeamercolor*{block body alerted}{bg=SUred!15!white,fg=black}
+\setbeamercolor*{block title example}{bg=SUblue,fg=white}
+\setbeamercolor*{block body example}{bg=SUblue!15!white,fg=black}
+
+\newcommand{\changetext}[1]{\textcolor{SUred}{[#1]}}
