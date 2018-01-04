@@ -1,113 +1,65 @@
-\ProvidesPackage{beamerthemeUPMC} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% A modification of the Madrid Beamer theme
+%% to use the colors of Université Pierre et Marie Curie
+%%
+%%  \usetheme{UPMC}
+%%
+%% A. Spiga circa 2010
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProvidesPackage{beamerthemeUPMC}
+\RequirePackage{beamerthemeMadrid}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\selectcolormodel{cmyk}
-\mode<presentation>
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% custom colors
+%%%
+%%% COULEURS UPMC
+%%%
 \definecolor{orangeUPMC}{RGB}{224,82,6}
 \definecolor{UPMC}{RGB}{145,120,91}
 \definecolor{redUPMC}{RGB}{181,56,79}
 \definecolor{greenUPMC}{RGB}{144,152,107}
 
-% headline colors and fonts
-\setbeamercolor{headline}{bg=white}
-\setbeamercolor{title in headline}{fg=orangeUPMC}
-\setbeamercolor{author in headline}{fg=greenUPMC}
-%\setbeamercolor{institute in headline}{fg=lightgray}
-%\setbeamercolor{logo in headline}{fg=black,bg=lightgray}
-\setbeamercolor{separation line}{bg=orangeUPMC}
+%%% PREPARATION POUR DARK SLIDES or anything similar
+%%% ... only the first line if one wants to keep theme layout
+\newcommand{\allcolorsblack}{
+\setbeamercolor{normal text}{bg=black} 
+\setbeamercolor{frametitle}{bg=black}
+\setbeamercolor{author in head/foot}{bg=black,fg=black!85!white}
+\setbeamercolor{title in head/foot}{bg=black,fg=black!85!white}
+\setbeamercolor{institute in head/foot}{bg=black,fg=black!85!white}
+\setbeamercolor{date in head/foot}{bg=black,fg=black!85!white}
+}
+\newcommand{\allcolorswhite}{
+\setbeamercolor{normal text}{bg=white} 
+\setbeamercolor{frametitle}{bg=white}
+\setbeamercolor{author in head/foot}{bg=white,fg=black!35!white}
+\setbeamercolor{title in head/foot}{bg=white,fg=black!35!white}
+\setbeamercolor{institute in head/foot}{bg=white,fg=black!35!white}
+\setbeamercolor{date in head/foot}{bg=white,fg=black!35!white}
+}
+\allcolorswhite
 
-% footline colors and fonts
-\setbeamercolor{footline}{bg=white,fg=orangeUPMC}
-\setbeamerfont{footline}{size=\normalsize}
+\setbeamercolor{titlelike}{bg=UPMC,fg=white}
+\setbeamercolor{frametitle}{fg=orangeUPMC,bg=white}
+\setbeamercolor{framesubtitle}{parent=frametitle}
 
-% body colors and fonts  '''bg='''
 \setbeamercolor*{normal text}{fg=UPMC}
 \setbeamercolor*{alerted text}{fg=redUPMC}
 \setbeamercolor*{example text}{fg=greenUPMC}
 
-%% block environment
+\setbeamercolor{item projected}{bg=orangeUPMC,fg=white}
+\setbeamercolor{section in toc}{fg=orangeUPMC}
+\setbeamercolor{subsection in toc}{fg=UPMC}
+
+%\setbeamerfont{block title}{size={}}
 \setbeamercolor*{block title}{bg=greenUPMC,fg=white}
 \setbeamercolor*{block body}{bg=greenUPMC!15!white,fg=black}
 \setbeamercolor*{block title alerted}{bg=redUPMC,fg=white}
 \setbeamercolor*{block body alerted}{bg=redUPMC!15!white,fg=black}
 \setbeamercolor*{block title example}{bg=UPMC,fg=white}
 \setbeamercolor*{block body example}{bg=UPMC!15!white,fg=black}
-\setbeamerfont{block title}{size=\large,series=\bf}
 
-%%% example environment
-%\setbeamercolor*{example title}{fg=white,bg=UPMC}
-%\setbeamerfont{example title}{size=\large,series=\bf,bg=black,fg=white}
+\newcommand{\changetext}[1]{\textcolor{orangeUPMC}{[#1]}}
 
-
+%%% shape of itemize items
 \setbeamertemplate{itemize items}[triangle]
-\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
-
-
-
-
-%\setbeamercolor{titlelike}{bg=UPMC,fg=white}
-%\setbeamercolor{frametitle}{fg=orangeUPMC,bg=white}
-%\setbeamercolor{framesubtitle}{parent=frametitle}
-
-%\setbeamercolor{item projected}{bg=orangeUPMC,fg=white}
-%\setbeamercolor{section in toc}{fg=orangeUPMC}
-%\setbeamercolor{subsection in toc}{fg=UPMC}
-
-
-
-
-%%% DECALE JUSTE LES BLOCS SIMPLES ET PAS LES EXAMPLE OU ALERT ???
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\setbeamertemplate{block begin}{
-%  \vskip.75ex
-%  \begin{beamercolorbox}[leftskip=1cm,colsep*=.75ex]{block title}%
-%    \usebeamerfont*{block title}\insertblocktitle
-%  \end{beamercolorbox}%
-%  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
-%  \usebeamerfont{block body}%
-%  \begin{beamercolorbox}[colsep*=.75ex,sep=.75ex,vmode]{block body}%
-%    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
-%  }
-%  \setbeamertemplate{block end}{
-%  \end{beamercolorbox}
-%}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setbeamertemplate{headline}{  
-  \leavevmode
-
-  \begin{beamercolorbox}[wd=\paperwidth]{headline}
-				\centering
-        \vskip2ex
-        \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
-        \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
-  \end{beamercolorbox}
-  
-  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
-    \rule{0pt}{2pt}
-  \end{beamercolorbox}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setbeamertemplate{footline}{
-  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
-    \rule{0pt}{2pt}
-  \end{beamercolorbox}
-  
-  \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{footline}%
-    \hfill \raisebox{-0.4cm}{\insertfooter}
-    \vskip1ex
-  \end{beamercolorbox}
-
-  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
-    \rule{0pt}{2pt}
-  \end{beamercolorbox}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\mode<all>
-
-\def\footer#1{\def\insertfooter{#1}}
+%%% no navigation symbols
+\setbeamertemplate{navigation symbols}{}
