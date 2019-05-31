@@ -17,37 +17,40 @@
 \definecolor{SUred}{RGB}{230,51,42}
 \definecolor{SUscience}{RGB}{82,181,229}
 
+
 %%% PREPARATION POUR DARK SLIDES or anything similar
 %%% ... only the first line if one wants to keep theme layout
 \newcommand{\allcolorsblack}{
-\setbeamercolor{normal text}{bg=black} 
-\setbeamercolor{frametitle}{fg=SUscience,bg=black}
-\setbeamercolor{author in head/foot}{bg=black,fg=SUscience}
-\setbeamercolor{title in head/foot}{bg=black,fg=SUscience}
-\setbeamercolor{institute in head/foot}{bg=black,fg=SUscience}
-\setbeamercolor{date in head/foot}{bg=black,fg=SUscience}
+\setbeamercolor{normal text}{bg=black,fg=SUscience!85!SUblue} 
+\setbeamercolor{frametitle}{fg=SUred,bg=black}
+\setbeamercolor{author in head/foot}{bg=black,fg=SUgray}%SUscience!50!SUblue}
+\setbeamercolor{title in head/foot}{bg=black,fg=SUgray}%SUscience!50!SUblue}
+\setbeamercolor{institute in head/foot}{bg=black,fg=SUgray}%SUscience!50!SUblue}
+\setbeamercolor{date in head/foot}{bg=black,fg=SUgray}%SUscience!50!SUblue}
+\usebeamercolor*{normal text}
 }
 \newcommand{\allcolorswhite}{
-\setbeamercolor{normal text}{bg=white} 
+\setbeamercolor{normal text}{bg=white,fg=SUscience!50!SUblue} 
 \setbeamercolor{frametitle}{fg=SUblue,bg=white}
-\setbeamercolor{author in head/foot}{bg=white,fg=black!35!white}
-\setbeamercolor{title in head/foot}{bg=white,fg=black!35!white}
-\setbeamercolor{institute in head/foot}{bg=white,fg=black!35!white}
-\setbeamercolor{date in head/foot}{bg=white,fg=black!35!white}
+\setbeamercolor{author in head/foot}{bg=white,fg=SUgray}%black!35!white}
+\setbeamercolor{title in head/foot}{bg=white,fg=SUgray}%black!35!white}
+\setbeamercolor{institute in head/foot}{bg=white,fg=SUgray}%black!35!white}
+\setbeamercolor{date in head/foot}{bg=white,fg=SUgray}%black!35!white}
+\usebeamercolor*{normal text}
 }
-\allcolorswhite
+%\allcolorswhite
 
 \setbeamercolor{titlelike}{bg=SUblue,fg=white}
 \setbeamercolor{frametitle}{fg=SUblue,bg=white}
 \setbeamercolor{framesubtitle}{parent=frametitle}
 
-\setbeamercolor*{normal text}{fg=SUscience!50!SUblue}
+%\setbeamercolor*{normal text}{fg=SUscience!50!SUblue}
 \setbeamercolor*{alerted text}{fg=SUred}
 \setbeamercolor*{example text}{fg=SUgray!65!SUblue}
 
 \setbeamercolor{item projected}{bg=SUred,fg=white}
 \setbeamercolor{section in toc}{fg=SUblue}
-\setbeamercolor{subsection in toc}{fg=SUgray!50!SUblue}
+\setbeamercolor{subsection in toc}{fg=SUgray!65!SUblue}
 
 %\setbeamerfont{block title}{size={}}
 \setbeamercolor*{block title}{bg=SUgray!65!SUblue,fg=white}
@@ -57,7 +60,7 @@
 \setbeamercolor*{block title example}{bg=SUblue,fg=white}
 \setbeamercolor*{block body example}{bg=SUblue!15!white,fg=black}
 
-\newcommand{\changetext}[1]{\textcolor{SUred}{[#1]}}
+\newcommand{\changetext}[1]{\textcolor{SUscience!50!SUblue}{[#1]}}
 
 %%% no navigation symbols
 \setbeamertemplate{navigation symbols}{}
