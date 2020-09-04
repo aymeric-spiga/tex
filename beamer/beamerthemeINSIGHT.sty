@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% A modification of the Madrid Beamer theme
+%% to use the colors of Sorbonne Université (Sciences)
+%%
+%%  \usetheme{SUsci}
+%%
+%% A. Spiga 04/01/2018
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProvidesPackage{beamerthemeINSIGHT}
+\RequirePackage{beamerthemeMadrid}
+
+%%%
+%%% COULEURS SU
+%%%
+%\definecolor{SUblue}{RGB}{29,39,105}
+%\definecolor{SUgray}{RGB}{195,192,189}
+%\definecolor{SUred}{RGB}{230,51,42}
+%\definecolor{SUscience}{RGB}{82,181,229}
+
+%%%
+%%% COULEURS INSIGHT (converted from E. Beucler HTML codes)
+%%%
+\definecolor{SUred}{RGB}{233,31,38} % red insight
+\definecolor{SUblue}{RGB}{83,15,15} % purple insght
+\definecolor{SUscience}{RGB}{253,217,12} % yellow insight
+\definecolor{SUgray}{RGB}{253,244,196} % pale yellow insight
+%%\definecolor{insight1}{HTML}{e91f26} % red insight 233,31,38
+%%\definecolor{insight2}{HTML}{530f0f} % purple insght 83,15,15
+%%\definecolor{insight3}{HTML}{fbc832} % yellow seis 251,200,50
+%%\definecolor{insight4}{HTML}{f39100} % orange seis 243,145,0
+%%\definecolor{insight5}{HTML}{d7881a} % lightbrown seis 215,136,26
+%%\definecolor{insight6}{HTML}{713300} % brown seis 113,51,0
+%%\definecolor{insight7}{HTML}{fdd90c} % yellow insight 253,217,12
+%%\definecolor{insight8}{HTML}{fdf4c4} % pale yellow insight 253,244,196
+%\definecolor{insight1}{RGB}{233,31,38} % red insight
+%\definecolor{insight2}{RGB}{83,15,15} % purple insght
+%\definecolor{insight3}{RGB}{251,200,50}
+%\definecolor{insight4}{RGB}{243,145,0}
+%\definecolor{insight5}{RGB}{215,136,26}
+%\definecolor{insight6}{RGB}{113,51,0}
+%\definecolor{insight7}{RGB}{253,217,12} % yellow insight
+%\definecolor{insight8}{RGB}{253,244,196} % pale yellow insight
+
+%%% PREPARATION POUR DARK SLIDES or anything similar
+%%% ... only the first line if one wants to keep theme layout
+\renewcommand{\allcolorsblack}{
+\setbeamercolor{normal text}{bg=black} 
+\setbeamercolor{frametitle}{fg=SUred,bg=black}
+\setbeamercolor{author in head/foot}{bg=black,fg=SUgray}%SUscience!50!SUblue}
+\setbeamercolor{title in head/foot}{bg=black,fg=SUgray}%SUscience!50!SUblue}
+\setbeamercolor{institute in head/foot}{bg=black,fg=SUgray}%SUscience!50!SUblue}
+\setbeamercolor{date in head/foot}{bg=black,fg=SUgray}%SUscience!50!SUblue}
+}
+\renewcommand{\allcolorswhite}{
+\setbeamercolor{normal text}{bg=white} 
+\setbeamercolor{frametitle}{fg=SUblue,bg=SUgray}
+\setbeamercolor{author in head/foot}{bg=SUgray,fg=SUblue}%black!35!white}
+\setbeamercolor{title in head/foot}{bg=SUgray,fg=SUblue}%black!35!white}
+\setbeamercolor{institute in head/foot}{bg=SUgray,fg=SUblue}%black!35!white}
+\setbeamercolor{date in head/foot}{bg=SUgray,fg=SUblue}%black!35!white}
+}
+\allcolorswhite
+
+\setbeamercolor{titlelike}{bg=SUblue,fg=white}
+\setbeamercolor{frametitle}{fg=SUblue,bg=white}
+\setbeamercolor{framesubtitle}{parent=frametitle}
+
+\setbeamercolor*{normal text}{fg=SUscience!50!SUblue}
+\setbeamercolor*{alerted text}{fg=SUred}
+\setbeamercolor*{example text}{fg=SUgray!65!SUblue}
+
+\setbeamercolor{item projected}{bg=SUred,fg=white}
+\setbeamercolor{section in toc}{fg=SUblue}
+\setbeamercolor{subsection in toc}{fg=SUgray!65!SUblue}
+
+%\setbeamerfont{block title}{size={}}
+\setbeamercolor*{block title}{bg=SUgray!65!SUblue,fg=white}
+\setbeamercolor*{block body}{bg=SUgray!50!white,fg=black}
+\setbeamercolor*{block title alerted}{bg=SUred,fg=white}
+\setbeamercolor*{block body alerted}{bg=SUred!15!white,fg=black}
+\setbeamercolor*{block title example}{bg=SUblue,fg=white}
+\setbeamercolor*{block body example}{bg=SUblue!15!white,fg=black}
+
+\renewcommand{\changetext}[1]{\textcolor{SUscience!50!SUblue}{[#1]}}
+
+%%% no navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+%%% transparent logo
+\renewcommand{\insighttoplogo}{\toplogo{0.1}{/home/aspiga/soft/beamer_insight_en/img/logo/logoI.png}}
